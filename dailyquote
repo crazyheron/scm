@@ -7,7 +7,10 @@
 
 #https://apiv3.shanbay.com/weapps/dailyquote/quote/?date=2022-01-28
 
+#yesterday=$(date -d '1 day ago' +'%Y-%m-%d')
 
-yestoday=$(date -d '1 day ago' +'%Y-%m-%d')
+
+
+yesterday=$(date -d 'yesterday' +'%Y-%m-%d')
 
 content=$(curl https://apiv3.shanbay.com/weapps/dailyquote/quote/?date=$yestoday|jq '.content'|tr '"' ' ')
