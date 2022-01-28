@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+#shell or python
+
+#https://dict.youdao.com/infoline?mode=publish&date=2022-01-28&update=auto&apiversion=5.0
+
+#https://apiv3.shanbay.com/weapps/dailyquote/quote/?date=2022-01-28
+
+
+yestoday=$(date -d '1 day ago' +'%Y-%m-%d')
+
+content=$(curl https://apiv3.shanbay.com/weapps/dailyquote/quote/?date=$yestoday|jq '.content'|tr '"' ' ')
